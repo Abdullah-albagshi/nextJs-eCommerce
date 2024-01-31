@@ -1,6 +1,7 @@
 import {
   Carousel as CarouselComponent,
   CarouselContent,
+  CarouselDots,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
@@ -67,6 +68,7 @@ const Carousel = () => {
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
+        <CarouselDots />
       </CarouselComponent>
     </section>
   )
