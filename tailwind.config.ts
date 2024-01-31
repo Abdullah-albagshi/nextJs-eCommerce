@@ -21,8 +21,8 @@ const config = {
       colors: {
         'ecm-yellow': '#DC9814',
         'ecm-gray': '#777777',
-        // #686868
         'ecm-gray-light': '#686868',
+        'ecm-black': '#282828',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
