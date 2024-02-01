@@ -34,7 +34,7 @@ type CarouselContextProps = {
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
 
-function useCarousel() {
+export function useCarousel() {
 	const context = React.useContext(CarouselContext);
 
 	if (!context) {
@@ -238,7 +238,7 @@ const CarouselNext = React.forwardRef<
 	HTMLButtonElement,
 	React.ComponentProps<typeof Button>
 >(({ className, variant = 'outline', size = 'icon', ...props }, ref) => {
-	const { orientation, scrollNext, canScrollNext, isHovered } = useCarousel();
+	const { scrollNext, canScrollNext, isHovered } = useCarousel();
 
 	return (
 		<Button
