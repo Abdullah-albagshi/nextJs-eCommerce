@@ -287,11 +287,11 @@ const CarouselDots = React.forwardRef<
 			)}
 			{...props}
 		>
-			<div className='md:absolute md:bottom-8 flex justify-center items-center'>
+			<div className='flex items-center justify-center md:absolute md:bottom-8'>
 				{Array.from(Array(numberOfSlides).keys()).map((i) => (
 					<button
 						key={i}
-						className={`mx-1 w-2 h-2 rounded-full p-0.5 cursor-pointer transition-all duration-300 border-2  
+						className={`mx-1 w-3 h-3 rounded-full cursor-pointer transition-all duration-300 border-2  
             ${i === current ? 'w-3 h-3 border-2 border-ecm-yellow' : 'bg-[#aaa] border-transparent'}`}
 						onClick={() => scrollTo(i)}
 					/>
