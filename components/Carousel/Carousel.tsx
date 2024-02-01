@@ -59,10 +59,10 @@ const Carousel = () => {
 
   return (
     <section className='max-w-[100rem] mx-auto'>
-      <CarouselComponent className='w-full' >
+      <CarouselComponent className='w-full'>
         <CarouselContent>
           {carouselItems.map((item, idx) => (
-              <CarouselItem item={item} index={idx} key={item.key}/>
+            <CarouselItem item={item} index={idx} key={item.key} />
           ))}
         </CarouselContent>
         <CarouselPrevious />
