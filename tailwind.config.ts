@@ -23,6 +23,8 @@ const config = {
         'ecm-gray': '#777777',
         'ecm-gray-light': '#686868',
         'ecm-black': '#282828',
+        'ecm-gray-lighter': '#A0A0A0',
+        'ecm-gray-lightest': '#EEEEEE',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -79,7 +81,7 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        'fade-in': 'fade-in 2s ease-out',
+        'fade-in': 'fade-in 1s ease-out',
       },
     },
   },
