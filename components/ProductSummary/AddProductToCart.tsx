@@ -6,17 +6,23 @@ import { cn } from '@/lib/utils';
 import { useCart } from '../CartProvider/CartProvider';
 import { useProductSummary } from './ProductSummaryContext';
 
-export const AddProductToCart = () => {
-  const {addOrUpdateProduct} = useCart()
+type Props = {
+  // callback is used to close the modal after adding the product to the cart
+  callback?: () => void;
+};
+
+export const AddProductToCart = ({ callback }: Props) => {
+  const {addOrUpdateProduct, setIsCartModalOpen} = useCart()
   const {
     product, quantity: selectedQuantity, color, setColor, updateQuantity, isButtonDisabled,
   } = useProductSummary();
   const { colors, quantity: AvailableQuantity } = product;
 
   const handleAddToCart = () => {
-    addOrUpdateProduct({
+    const isProductAdded = addOrUpdateProduct({
       id: product.id,
       name: product.name,
+      slug: product.slug,
       thumbnails: product.thumbnails,
       price: product.price,
       discount: product.discount,
@@ -24,6 +30,14 @@ export const AddProductToCart = () => {
       selectedQuantity,
       color,
     });
+    if (!isProductAdded) {
+      return;
+    }
+    // check if a callback is passed and call it
+    if (callback) {
+      callback();
+    }
+    setIsCartModalOpen(true);
   }
 
   return (

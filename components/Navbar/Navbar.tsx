@@ -9,15 +9,18 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
 
+import CartModal from '../CartModal/CartModal';
 import CategoryNav from './CategoryNav';
 import HamburgerMenu from './HamburgerMenu';
 import Link from 'next/link';
 import ShopNav from './ShopNav';
 import { useCart } from '../CartProvider/CartProvider';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = React.useState(false);
-  const { totalItems } = useCart();
+  const { totalItems, isCartModalOpen, setIsCartModalOpen } = useCart();
+  const pathname = usePathname();
   return (
     <>
       {/* // when scrolling down, the navbar padding will be removed */}
@@ -64,12 +67,12 @@ const Navbar = () => {
                   <span>Sign in</span>
                 </Link>
               </li>
-              <li className='px-3 p y-4'>
-                <Link href='/cart'>
+              <li className='px-3 p y-4' hidden={pathname === '/cart'}>
+                <button onClick={() => setIsCartModalOpen(true)} >
                   <span className='hidden md:inline-block'>Cart</span>
                   <span className='hidden md:inline-block text-ecm-yellow text-xs ml-1 relative top-[-0.625rem]'>{totalItems}</span>
                   <span className='md:hidden text-ecm-black hover:text-ecm-gray-light'>{`(${totalItems})`}</span>
-                </Link>
+                </button>
               </li>
             </ul>
           </nav>
@@ -80,6 +83,7 @@ const Navbar = () => {
             }`}
         />
       </header>
+      <CartModal isOpen={isCartModalOpen} setOpen={setIsCartModalOpen} />
     </>
   );
 };

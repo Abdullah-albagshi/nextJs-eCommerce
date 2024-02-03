@@ -9,7 +9,7 @@ export const ProductCardDiscount = () => {
   if (!discount) return null;
 
   return (
-    <span className='absolute top-3 right-5 z-50 bg-white px-2  rounded-[1.875rem]'>
+    <span className='absolute top-3 right-5 z-10 bg-white px-2  rounded-[1.875rem]'>
       <span className='text-sm text-ecm-black'>-{discount}%</span>
     </span>
   );

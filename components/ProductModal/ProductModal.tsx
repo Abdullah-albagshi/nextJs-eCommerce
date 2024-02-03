@@ -49,7 +49,7 @@ export function ProductModal({ product }: Props) {
               <section className="flex flex-col gap-4">
                 <ProductSummaryDescription />
                 <ProductSummaryRating />
-                <AddProductToCart />
+                <AddProductToCart callback={()=>{setIsModalOpen(false)}}/>
                 <SocialMedia />
               </section>
             </ProductSummary>

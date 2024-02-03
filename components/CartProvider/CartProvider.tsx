@@ -6,9 +6,9 @@ import { getCookie, setCookie } from '@/lib/utils';
 import { Product } from '@/types/Product';
 import { useToast } from '@/components/ui/use-toast';
 
-type CartProduct = Pick<
+export type CartProduct = Pick<
 	Product,
-	'id' | 'name' | 'thumbnails' | 'price' | 'discount' | 'quantity'
+	'id' | 'name' | 'thumbnails' | 'price' | 'discount' | 'quantity' | 'slug'
 > & {
 	selectedQuantity: number;
 	color?: string;
@@ -19,11 +19,15 @@ type CartState = {
 };
 
 type CartActions = {
-	addOrUpdateProduct: (product: CartProduct) => void;
+  // returns false if the product is not added to the cart
+	addOrUpdateProduct: (product: CartProduct) => boolean;
 	updateProductQuantity: (productId: string, quantity: number) => void;
 	removeProduct: (productId: string) => void;
-	totalItems: number;
 	clearCart: () => void;
+  isCartModalOpen: boolean;
+  setIsCartModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+	totalItems: number;
+  subtotal: number;
 };
 
 type CartContext = CartState & CartActions;
@@ -36,6 +40,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 	children,
 }) => {
 	const [products, setProducts] = useState<CartProduct[]>([]);
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 	const { toast } = useToast();
 
 	// Load cart from cookies on component mount
@@ -61,8 +66,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 	) => {
 		const className =
 			variant === 'success'
-				? 'bg-green-200 text-ecm-gray rounded border-green-500 border'
-				: 'bg-yellow-200 text-ecm-gray rounded border-yellow-500 border';
+				? 'bg-white text-green-700 rounded  border'
+				: 'bg-white text-yellow-700 rounded  border';
 		toast({
       className,
 			description,
@@ -111,7 +116,9 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 			}
 		} else {
       toastMessage(<p className='text-base'>Not enough stock</p>,'warning');
+      return false;
 		}
+    return true;
 	};
 
 	const updateProductQuantity = (productId: string, quantity: number) => {
@@ -140,6 +147,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 	};
 
 	const totalItems = products.reduce((acc, p) => acc + p.selectedQuantity, 0);
+  const subtotal = products.reduce((acc, p) => acc + (p.selectedQuantity * p.price * (100 - (p.discount || 0))) / 100, 0);
 
 	return (
 		<CartContext.Provider
@@ -148,8 +156,11 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 				addOrUpdateProduct,
 				removeProduct,
 				clearCart,
-				totalItems,
 				updateProductQuantity,
+        isCartModalOpen,
+        setIsCartModalOpen,
+				totalItems,
+        subtotal,
 			}}
 		>
 			{children}
