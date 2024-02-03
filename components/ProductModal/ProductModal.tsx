@@ -18,21 +18,21 @@ import { ProductSummaryRating } from "../ProductSummary/ProductSummaryRating"
 import React from "react"
 import SocialMedia from "../SocialMedia/SocialMedia"
 import { X } from "lucide-react"
-import { useRouter } from "next/navigation"
+import { useProductCard } from "../ProductCard/ProductCardContext"
 
 type Props = {
   product: Product
 }
 
 export function ProductModal({ product }: Props) {
-  const router = useRouter();
+  const {isModalOpen, setIsModalOpen} = useProductCard()
 
   const handleClose = () => {
-    router.back();
+    setIsModalOpen(false);
   }
 
   return (
-    <Dialog open={true} onOpenChange={handleClose}>
+    <Dialog open={isModalOpen} onOpenChange={handleClose}>
       <DialogOverlay className="fixed indent-0 bg-black/5" onClick={handleClose} />
       <DialogContent className="w-full sm:max-w-[70rem] p-0 border-none max-h-screen overflow-y-scroll lg:overflow-y-auto">
         <DialogClose onClick={handleClose} className="absolute z-[9999999999999] cursor-pointer top-4 right-6">

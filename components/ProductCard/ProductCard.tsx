@@ -8,6 +8,7 @@ import { ProductCardInfo } from './ProductCardInfo';
 import { ProductCardItem } from './ProductCardItem';
 import { ProductCardPrice } from './ProductCardPrice';
 import { ProductCardProvider } from './ProductCardContext';
+import { ProductModal } from '../ProductModal/ProductModal';
 import React from 'react';
 
 type Props = {
@@ -24,6 +25,7 @@ const ProductCard = ({ product, className, ...props }: Props) => {
         <ProductCardImage />
         <ProductCardInfo />
       </ProductCardItem>
+      <ProductModal product={product} />
     </ProductCardProvider>
   );
 };
