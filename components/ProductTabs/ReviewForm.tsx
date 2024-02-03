@@ -70,7 +70,7 @@ const ReviewForm = () => {
 						<input id='email' className='w-full border-2 ' required />
 					</div>
 				</div>
-				<button className='w-fit px-8 py-2 text-white transition-colors duration-300 bg-[#111] hover:bg-[#111]/50 disabled:cursor-not-allowed disabled:hover:bg-ecm-black'>
+				<button className='px-8 py-2 ecm-black-button w-fit '>
 					Submit
 				</button>
 			</form>

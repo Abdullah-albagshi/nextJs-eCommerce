@@ -103,7 +103,7 @@ export const AddProductToCart = ({ callback }: Props) => {
       </div>
 
       <button
-        className='w-full p-4 text-white transition-colors duration-300 bg-ecm-black hover:bg-ecm-gray disabled:cursor-not-allowed disabled:hover:bg-ecm-black'
+        className='!mt-0 ecm-black-button'
         disabled={isButtonDisabled}
         onClick={handleAddToCart}
       >

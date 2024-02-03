@@ -20,7 +20,7 @@ const ErrorPage = () => {
       />
       <p className={cn('text-ecm-black')}>Page not found.</p>
 
-      <Link href={'/'} className='w-full p-4 text-white transition-colors duration-300 bg-[#111] hover:bg-[#111]/50 disabled:cursor-not-allowed disabled:hover:bg-ecm-black' >
+      <Link href={'/'} className='ecm-black-button' >
         <ArrowLeft size={16} strokeWidth={2} className='mr-2' />Go Home
       </Link>
     </div>

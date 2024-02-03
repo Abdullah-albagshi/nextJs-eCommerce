@@ -72,7 +72,7 @@ const CartModal = ({ isOpen, setOpen }: CartModalProps) => {
 						</button>
 					</Link>
 					<Link href='/cart' className='w-full' onClick={()=>{setIsCartModalOpen(false)}}>
-						<button className='w-full p-4 text-white transition-colors duration-300 bg-[#111] hover:bg-[#111]/50 disabled:cursor-not-allowed disabled:hover:bg-ecm-black'>
+						<button className='!mt-0 ecm-black-button'>
 							Proceed to Checkout
 						</button>
 					</Link>

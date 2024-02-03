@@ -15,3 +15,12 @@ export type Category = {
 };
 
 
+export type CategoryCarousel = {
+  key: string;
+  title: string;
+  category: Categories;
+  link: Category['href'];
+  image: string;
+  mobileImage: string;
+  textColor: string;
+};

@@ -14,7 +14,7 @@ export default function Page() {
         <EmptyCart />
         <Link
           href='/'
-          className='mt-4  px-2 py-1 text-center text-white transition-colors duration-300 bg-[#111] hover:bg-[#111]/50 disabled:cursor-not-allowed disabled:hover:bg-ecm-black'
+          className='ecm-black-button'
         >
           Return to shop
         </Link>
@@ -50,7 +50,7 @@ export default function Page() {
             <p className='text-sm'>${(subtotal + 10).toFixed(2)}</p>
           </div>
         </div>
-        <button className='w-full p-4 text-white transition-colors duration-300 bg-[#111] hover:bg-[#111]/50 disabled:cursor-not-allowed disabled:hover:bg-ecm-black mt-4'>
+        <button className='ecm-black-button'>
           Proceed to Checkout
         </button>
       </section>
