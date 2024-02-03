@@ -1,15 +1,16 @@
-import { cn } from '@/lib/utils';
-import { Facebook, Twitter, Instagram, X } from 'lucide-react';
-import React from 'react';
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from '@/components/ui/accordion';
-import { shopMenuItems } from './ShopMenuItems';
+
 import CategoryNav from './CategoryNav';
 import Link from 'next/link';
+import React from 'react';
+import SocialMedia from '../SocialMedia/SocialMedia';
+import { cn } from '@/lib/utils';
+import { shopMenuItems } from './ShopMenuItems';
 
 const HamburgerMenu = () => {
 	const [isOpen, setIsOpen] = React.useState(false);
@@ -18,7 +19,6 @@ const HamburgerMenu = () => {
 	return (
 		<nav className='md:hidden'>
 			<button className='relative w-8 h-8 p-2 text-3xl cursor-pointer md:hidden' onClick={() => setIsOpen(!isOpen)}>
-				{/* {isOpen ? <X /> : <Menu />} */}
 					<div
 						className={cn(
 							'absolute top-4 -mt-0.5 h-[2px] w-4 rounded bg-black transition-all duration-500',
@@ -117,23 +117,7 @@ const HamburgerMenu = () => {
 							</Link>
 						</li>
 					</ul>
-					<ul className='flex items-center justify-start w-full mt-4'>
-						<li className='mr-4 '>
-							<Link href='/'>
-								<Facebook />
-							</Link>
-						</li>
-						<li className='mr-4 '>
-							<Link href='/'>
-								<Twitter />
-							</Link>
-						</li>
-						<li className='mr-4 '>
-							<Link href='/'>
-								<Instagram />
-							</Link>
-						</li>
-					</ul>
+					<SocialMedia/>
 				</div>
 			</div>
 		</nav>

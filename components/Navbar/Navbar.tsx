@@ -10,16 +10,16 @@ import {
 } from '@/components/ui/navigation-menu';
 
 import CategoryNav from './CategoryNav';
+import HamburgerMenu from './HamburgerMenu';
 import Link from 'next/link';
 import ShopNav from './ShopNav';
-import HamburgerMenu from './HamburgerMenu';
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = React.useState(false);
   return (
     <>
       {/* // when scrolling down, the navbar padding will be removed */}
-      <header className='w-full py-[.9375rem] h-20 sticky top-0 bg-white z-[99990] border-b-[1px]'>
+      <header className='w-full py-[.9375rem] h-20 sticky top-0 bg-white z-[30] border-b-[1px]'>
         <div className='flex items-center justify-between mx-auto ecm-max-width '>
           <nav className='hidden md:block'>
             <ul className='flex items-center justify-center'>
