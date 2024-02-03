@@ -4,6 +4,7 @@ import { CartProvider } from '@/components/CartProvider/CartProvider';
 import Footer from '@/components/Footer/Footer';
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar/Navbar';
+import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -22,6 +23,7 @@ export default function RootLayout({
           <Navbar />
             {children}
           <Footer />
+          <Toaster />
         </CartProvider>
 			</body>
 		</html>
