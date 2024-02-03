@@ -2,14 +2,14 @@
 
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 
+import { EmptyCart } from '../EmptyCart/EmptyCart';
+import Link from 'next/link';
+import { ProductCartList } from '../ProductCartList/ProductCartList';
 import React from 'react';
 import { ScrollArea } from '../ui/scroll-area';
 import { X } from 'lucide-react';
-import { useCart } from '../CartProvider/CartProvider';
 import { cn } from '@/lib/utils';
-import { ProductCartList } from '../ProductCartList/ProductCartList';
-import { EmptyCart } from '../EmptyCart/EmptyCart';
-import Link from 'next/link';
+import { useCart } from '../CartProvider/CartProvider';
 
 type CartModalProps = {
 	isOpen: boolean;
@@ -24,10 +24,10 @@ const CartModal = ({ isOpen, setOpen }: CartModalProps) => {
 
 	return (
 		<Sheet open={isOpen} onOpenChange={handleClose}>
-			<SheetContent className='flex flex-col border-none bg-ecm-light-black py-8 px-10 w-full md:min-w-[26rem]'>
-				<div className='text-end border-b border-ecm-gray-light pb-4'>
+			<SheetContent className='flex flex-col border-none bg-ecm-light-black py-8 px-10 w-full md:min-w-[28rem]'>
+				<div className='pb-4 border-b text-end border-ecm-gray-light'>
 					<button
-						className='text-ecm-gray-lightest text-base'
+						className='text-base text-ecm-gray-lightest'
 						onClick={handleClose}
 					>
 						Close
@@ -56,7 +56,7 @@ const CartModal = ({ isOpen, setOpen }: CartModalProps) => {
 					)}
 					hidden={products.length === 0}
 				>
-					<div className='flex justify-between w-full py-2 border-y border-ecm-gray mb-8'>
+					<div className='flex justify-between w-full py-2 mb-8 border-y border-ecm-gray'>
 						<p className='text-base text-ecm-gray-lightest'>SubTotal:</p>
 						<span className='text-base text-ecm-gray-lightest'>
 							${subtotal.toFixed(2)}
