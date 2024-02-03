@@ -49,7 +49,7 @@ const CarouselItem = ({ item, index }: { item: CarouselItemProps, index: number 
             {item.title}
           </h1>
           <Link
-            href={item.link}
+            href={`${item.link}#${item.category}`}
             className={`text-[1rem] md:text-lg mt-[0.3125rem] md:mt-0 my-4 pb-1 transition-all duration-300 text-ecm-gray md:hover:text-ecm-yellow md:border-b-[1px] md:border-b-ecm-gray `}
           >
             {item.category}

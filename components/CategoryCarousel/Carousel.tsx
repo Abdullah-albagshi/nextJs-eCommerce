@@ -5,6 +5,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { Categories, Category } from '@/types/Categories';
 
 import CarouselItem from './CarouselItem';
 import React from 'react';
@@ -12,8 +13,8 @@ import React from 'react';
 export type CarouselItemProps = {
   key: string;
   title: string;
-  category: string;
-  link: string;
+  category: Categories;
+  link: Category['href'];
   image: string;
   mobileImage: string;
   textColor: string;
@@ -24,8 +25,8 @@ const Carousel = () => {
     {
       key: 'lamp',
       title: 'Contemporary Pendant Lighting',
-      category: 'Interior',
-      link: '/category/interior',
+      category: 'interior',
+      link: '/product-category/interior',
       image:
         'https://savoy.nordicmade.com/wp-content/uploads/2015/08/slider-pendant-lighting.jpg',
       mobileImage:
@@ -35,8 +36,8 @@ const Carousel = () => {
     {
       key: 'clock',
       title: 'Minimalist Rotating Disc Wall Clock',
-      category: 'Decoration',
-      link: '/category/decoration',
+      category: 'decoration',
+      link: '/product-category/decoration',
       image:
         'https://savoy.nordicmade.com/wp-content/uploads/2015/08/slider-wall-clock.jpg',
       mobileImage:
@@ -46,8 +47,8 @@ const Carousel = () => {
     {
       key: 'basket',
       title: 'Bamboo Zigzag Pattern Basket',
-      category: 'Essentials',
-      link: '/category/essentials',
+      category: 'essentials',
+      link: '/product-category/essentials',
       image:
         'https://savoy.nordicmade.com/wp-content/uploads/2015/08/slider-basket.jpg',
       mobileImage:
@@ -67,7 +68,7 @@ const Carousel = () => {
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
-        <CarouselDots />
+        <CarouselDots className='md:border-none'/>
       </CarouselComponent>
     </section>
   );
