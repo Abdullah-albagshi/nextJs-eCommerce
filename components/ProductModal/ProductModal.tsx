@@ -31,17 +31,6 @@ export function ProductModal({ product }: Props) {
     router.back();
   }
 
-  // close dialog when the user clicks escape
-  React.useEffect(() => {
-    function handleEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        handleClose();
-      }
-    }
-    window.addEventListener("keydown", handleEscape);
-    return () => window.removeEventListener("keydown", handleEscape);
-  }, []);
-
   return (
     <Dialog open={true} onOpenChange={handleClose}>
       <DialogOverlay className="fixed indent-0 bg-black/5" onClick={handleClose} />
