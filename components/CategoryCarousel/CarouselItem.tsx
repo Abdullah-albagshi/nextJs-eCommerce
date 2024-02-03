@@ -46,7 +46,7 @@ const CarouselItem = ({ item, index }: Props) => {
 				>
 					<h1
 						className={cn(
-							'text-xl md:text-4xl w-full md:max-w-[40%]',
+							'text-xl md:text-4xl md:font-thin w-full md:max-w-[40%]',
 							'text-ecm-black',
 							item.textColor === 'light' ? 'md:text-white' : '',
 						)}

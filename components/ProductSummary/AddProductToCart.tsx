@@ -59,8 +59,8 @@ export const AddProductToCart = ({ callback }: Props) => {
 								className={cn(
 									'w-6 h-6 rounded-full flex items-center justify-center hover:border hover:border-ecm-gray transition-all duration-300',
 									color === c.colorName
-										? 'border border-ecm-gray border-spacing-2'
-										: 'border-2 border-transparent border-spacing-2 '
+										? 'border border-ecm-gray'
+										: 'border border-transparent'
 								)}
 							>
 								<span
