@@ -5,8 +5,8 @@ import { getCookie, setCookie } from '@/lib/utils';
 
 import { Product } from '@/types/Product';
 
-type CartProduct = Pick<Product, 'id' | 'name' | 'thumbnails' | 'price' | 'discount'> & {
-  quantity: number;
+type CartProduct = Pick<Product, 'id' | 'name' | 'thumbnails' | 'price' | 'discount'| 'quantity'> & {
+  selectedQuantity: number;
   color?: string;
 };
 
@@ -42,24 +42,36 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setCookie(CART_COOKIE_NAME, JSON.stringify(cart), 7);
   };
 
-  const addOrUpdateProduct = (product: CartProduct) => {
+  const checkAvailableQuantity = (product: CartProduct) => {
     const existingProduct = products.find((p) => p.id === product.id && p.color === product.color);
     if (existingProduct) {
-      const newProducts = products.map((p) => {
-        if (p.id === product.id && p.color === product.color) {
-          return {
-            ...p,
-            quantity: p.quantity + product.quantity,
-          };
-        }
-        return p;
-      });
-      setProducts(newProducts);
-      updateCookies(newProducts);
+      return product.quantity + existingProduct.quantity <= existingProduct.selectedQuantity;
+    }
+    return product.quantity <= product.selectedQuantity;
+  };
+  
+  const addOrUpdateProduct = (product: CartProduct) => {
+    if (checkAvailableQuantity(product)) {
+      const existingProduct = products.find((p) => p.id === product.id && p.color === product.color);
+      if (existingProduct) {
+        const newProducts = products.map((p) => {
+          if (p.id === product.id && p.color === product.color) {
+            return {
+              ...p,
+              quantity: p.quantity + product.quantity,
+            };
+          }
+          return p;
+        });
+        setProducts(newProducts);
+        updateCookies(newProducts);
+      } else {
+        const newProducts = [...products, product];
+        setProducts(newProducts);
+        updateCookies(newProducts);
+      }
     } else {
-      const newProducts = [...products, product];
-      setProducts(newProducts);
-      updateCookies(newProducts);
+      alert('Not enough stock');
     }
   }
 

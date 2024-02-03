@@ -3,13 +3,29 @@
 import { Play } from 'lucide-react';
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { useCart } from '../CartProvider/CartProvider';
 import { useProductSummary } from './ProductSummaryContext';
 
 export const AddProductToCart = () => {
+  const {addOrUpdateProduct} = useCart()
   const {
     product, quantity: selectedQuantity, color, setColor, updateQuantity, isButtonDisabled,
   } = useProductSummary();
   const { colors, quantity: AvailableQuantity } = product;
+
+  const handleAddToCart = () => {
+    addOrUpdateProduct({
+      id: product.id,
+      name: product.name,
+      thumbnails: product.thumbnails,
+      price: product.price,
+      discount: product.discount,
+      quantity: AvailableQuantity,
+      selectedQuantity,
+      color,
+    });
+  }
+
   return (
     <section>
       {/* colors */}
@@ -75,6 +91,7 @@ export const AddProductToCart = () => {
       <button
         className='w-full p-4 text-white transition-colors duration-300 bg-ecm-black hover:bg-ecm-gray disabled:cursor-not-allowed disabled:hover:bg-ecm-black'
         disabled={isButtonDisabled}
+        onClick={handleAddToCart}
       >
         Add to Cart
       </button>
