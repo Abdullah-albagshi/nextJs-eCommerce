@@ -9,7 +9,7 @@ type CategoryNavProps = {} & React.HTMLAttributes<HTMLElement>
 const CategoryNav = ({className,...props}: CategoryNavProps) => {
   
   return (
-    <div className={cn('md:sticky md:left-0 md:top-20 bg-white w-full py-5 z-20', className)} {...props}>
+    <div className={cn('md:sticky md:left-0 md:top-20 bg-white w-full py-5 z-20 shadow', className)} {...props}>
       <div className='flex flex-wrap items-center w-full h-full md:max-w-[67.5rem] md:mx-auto'>
         {Categories.map((category: Category) => (
           <div key={category.key} className='w-1/2 sm:w-1/3 md:w-1/5 mb-5 md:mb-0  md:border-r-[1px] last:border-r-0'>
