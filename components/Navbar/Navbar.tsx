@@ -40,7 +40,7 @@ const Navbar = () => {
                 </NavigationMenu>
               </li>
               <li onMouseEnter={() => setIsVisible(true)}>
-                <Link href='/product/lamp' className='relative px-3 py-4 text-ecm-gray-light'>
+                <Link href='/' className='relative px-3 py-4 text-ecm-gray-light'>
                   Categories
                   <span className='ecm-gray-light text-[.625rem] ml-1 relative top-[-0.625rem]'>NEW</span>
                 </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className='px-3 p y-4'>
-                <Link href='/'>
+                <Link href='/cart'>
                   <span className='hidden md:inline-block'>Cart</span>
                   <span className='hidden md:inline-block text-ecm-yellow text-xs ml-1 relative top-[-0.625rem]'>{totalItems}</span>
                   <span className='md:hidden text-ecm-black hover:text-ecm-gray-light'>{`(${totalItems})`}</span>

@@ -20,7 +20,7 @@ type CartState = {
 
 type CartActions = {
 	addOrUpdateProduct: (product: CartProduct) => void;
-	updateQuantity: (productId: string, quantity: number) => void;
+	updateProductQuantity: (productId: string, quantity: number) => void;
 	removeProduct: (productId: string) => void;
 	totalItems: number;
 	clearCart: () => void;
@@ -37,6 +37,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
 	const [products, setProducts] = useState<CartProduct[]>([]);
 	const { toast } = useToast();
+
 	// Load cart from cookies on component mount
 	useEffect(() => {
 		const storedCart = getCookie(CART_COOKIE_NAME);
@@ -48,34 +49,48 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 	const updateCookies = (cart: CartProduct[]) => {
 		setCookie(CART_COOKIE_NAME, JSON.stringify(cart), 7);
 	};
+	// update the cart state and the cookies
+	const updateCart = (cart: CartProduct[]) => {
+		setProducts(cart);
+		updateCookies(cart);
+	};
 
-  const updateCart = (cart: CartProduct[]) => {
-    setProducts(cart);
-    updateCookies(cart);
-  };
+	const toastMessage = (
+		description: string | React.ReactNode,
+		variant: 'success' | 'warning'
+	) => {
+		const className =
+			variant === 'success'
+				? 'bg-green-200 text-ecm-gray rounded border-green-500 border'
+				: 'bg-yellow-200 text-ecm-gray rounded border-yellow-500 border';
+		toast({
+      className,
+			description,
+		});
+	};
 
 	const checkAvailableQuantity = (product: CartProduct) => {
 		const existingProduct = products.find(
 			(p) => p.id === product.id && p.color === product.color
 		);
-    // check if the product is already in the cart and if the quantity is available
+		// check if the product is already in the cart and if the quantity is available
 		if (existingProduct) {
 			return (
 				product.quantity >=
 				existingProduct.selectedQuantity + product.selectedQuantity
 			);
 		}
-    // if the product is not in the cart, check if the quantity is available
+		// if the product is not in the cart, check if the quantity is available
 		return product.quantity >= product.selectedQuantity;
 	};
 
 	const addOrUpdateProduct = (product: CartProduct) => {
-    // check if the quantity is available
+		// check if the quantity is available
 		if (checkAvailableQuantity(product)) {
-      const existingProduct = products.find(
-        (p) => p.id === product.id && p.color === product.color
-        );
-      // check if the product is already in the cart
+			const existingProduct = products.find(
+				(p) => p.id === product.id && p.color === product.color
+			);
+			// check if the product is already in the cart
 			if (existingProduct) {
 				const newProducts = products.map((p) => {
 					if (p.id === product.id && p.color === product.color) {
@@ -87,27 +102,19 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 					return p;
 				});
 				updateCart(newProducts);
-				toast({
-					description: 'Updated cart',
-				});
+				toastMessage(<p className='text-base'>Updated cart</p>,'success');
 			} else {
-        // if the product is not in the cart, add it
+				// if the product is not in the cart, add it
 				const newProducts = [...products, product];
 				updateCart(newProducts);
-				toast({
-					description: 'Added to cart',
-				});
+        toastMessage(<p className='text-base'>Added to cart</p>,'success');
 			}
 		} else {
-			toast({
-				variant: 'destructive',
-				description: 'Not enough stock',
-			});
+      toastMessage(<p className='text-base'>Not enough stock</p>,'warning');
 		}
-
 	};
 
-	const updateQuantity = (productId: string, quantity: number) => {
+	const updateProductQuantity = (productId: string, quantity: number) => {
 		const newProducts = products.map((p) => {
 			if (p.id === productId) {
 				return {
@@ -118,15 +125,18 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 			return p;
 		});
 		updateCart(newProducts);
+    toastMessage(<p className='text-base'>Updated quantity</p>,'success');
 	};
 
 	const removeProduct = (productId: string) => {
 		const newProducts = products.filter((p) => p.id !== productId);
 		updateCart(newProducts);
+    toastMessage(<p className='text-base'>Product Removed from cart</p>,'success');
 	};
 
 	const clearCart = () => {
 		updateCart([]);
+    toastMessage(<p className='text-base'>Cart cleared</p>,'success');
 	};
 
 	const totalItems = products.reduce((acc, p) => acc + p.selectedQuantity, 0);
@@ -139,7 +149,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
 				removeProduct,
 				clearCart,
 				totalItems,
-				updateQuantity,
+				updateProductQuantity,
 			}}
 		>
 			{children}
