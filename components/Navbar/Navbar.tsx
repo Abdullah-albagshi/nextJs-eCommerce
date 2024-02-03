@@ -13,9 +13,11 @@ import CategoryNav from './CategoryNav';
 import HamburgerMenu from './HamburgerMenu';
 import Link from 'next/link';
 import ShopNav from './ShopNav';
+import { useCart } from '../CartProvider/CartProvider';
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = React.useState(false);
+  const { totalItems } = useCart();
   return (
     <>
       {/* // when scrolling down, the navbar padding will be removed */}
@@ -65,8 +67,8 @@ const Navbar = () => {
               <li className='px-3 p y-4'>
                 <Link href='/'>
                   <span className='hidden md:inline-block'>Cart</span>
-                  <span className='hidden md:inline-block text-ecm-yellow text-xs ml-1 relative top-[-0.625rem]'>1</span>
-                  <span className='md:hidden text-ecm-black hover:text-ecm-gray-light'>{'(1)'}</span>
+                  <span className='hidden md:inline-block text-ecm-yellow text-xs ml-1 relative top-[-0.625rem]'>{totalItems}</span>
+                  <span className='md:hidden text-ecm-black hover:text-ecm-gray-light'>{`(${totalItems})`}</span>
                 </Link>
               </li>
             </ul>

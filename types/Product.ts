@@ -9,7 +9,7 @@ export type AdditionalInfo = {
 }
 
 export type Product = {
-  id: number
+  id: string
   name: string
   slug: string
   price: number

@@ -1,5 +1,6 @@
 import './globals.css';
 
+import { CartProvider } from '@/components/CartProvider/CartProvider';
 import Footer from '@/components/Footer/Footer';
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar/Navbar';
@@ -17,9 +18,11 @@ export default function RootLayout({
 	return (
 		<html lang='en' className='!scroll-smooth'>
 			<body className='flex min-h-dvh flex-col font-sans'>
-				<Navbar />
-          {children}
-				<Footer />
+        <CartProvider>
+          <Navbar />
+            {children}
+          <Footer />
+        </CartProvider>
 			</body>
 		</html>
 	);
