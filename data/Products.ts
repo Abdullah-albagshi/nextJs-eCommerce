@@ -2,7 +2,7 @@ import { Product } from '@/types/Product';
 
 export const Products: Product[] = [
 	{
-		id: 1,
+		id: '1',
 		name: 'Herschel Little America Backpack',
     slug: 'herschel-little-america',
 		price: 120,
@@ -59,7 +59,7 @@ export const Products: Product[] = [
 		],
 		relatedProducts: [
 			{
-				id: 2,
+				id: '2',
 				name: 'Herschel Little America Backpack',
         slug: 'herschel-little-america-backpack',
 				price: 120,
@@ -127,7 +127,7 @@ export const Products: Product[] = [
 		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
 	},
   {
-		id: 2,
+		id: '2',
 		name: 'Herschel Little America Backpack',
     slug: 'herschel-little-america-backpack',
 		price: 120,
@@ -189,7 +189,7 @@ export const Products: Product[] = [
 		],
 		relatedProducts: [
 			{
-				id: 2,
+				id: '2',
 				name: 'Herschel Little America Backpack',
         slug: 'herschel-little-america-backpack',
 				price: 120,
@@ -257,9 +257,9 @@ export const Products: Product[] = [
 		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
 	},
   {
-		id: 3,
+		id: '3',
 		name: 'Herschel Little America Backpack',
-    slug: 'herschel-little-america-backpack',
+    slug: 'herschel-little',
 		price: 120,
 		discount: 0,
 		colors: [
@@ -328,7 +328,7 @@ export const Products: Product[] = [
 		],
 		relatedProducts: [
 			{
-				id: 2,
+				id: '2',
 				name: 'Herschel Little America Backpack',
         slug: 'herschel-little-america-backpack',
 				price: 120,
@@ -396,9 +396,9 @@ export const Products: Product[] = [
 		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
 	},
   {
-		id: 4,
+		id: '4',
 		name: 'Herschel Little America Backpack',
-    slug: 'herschel-little-america-backpack',
+    slug: 'herschel',
 		price: 120,
 		discount: 0,
 		colors: [
@@ -410,6 +410,14 @@ export const Products: Product[] = [
 				colorHash: '#f3c6c6',
 				colorName: 'Pink',
 			},
+      {
+        colorHash: '#e3e3e3',
+        colorName: 'Gray',
+      },
+      {
+        colorHash: '#000000',
+        colorName: 'Black',
+      },
 		],
 		images: [
 			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack.jpg',
@@ -467,7 +475,7 @@ export const Products: Product[] = [
 		],
 		relatedProducts: [
 			{
-				id: 4,
+				id: '4',
 				name: 'Herschel Little America Backpack',
         slug: 'herschel-little-america-backpack',
 				price: 120,
@@ -534,21 +542,12 @@ export const Products: Product[] = [
 		],
 		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
 	},{
-		id: 5,
+		id: '5',
 		name: 'Herschel Little America Backpack',
-    slug: 'herschel-little-america-backpack',
+    slug: 'backpack',
 		price: 120,
 		discount: 0,
-		colors: [
-			{
-				colorHash: '#cfa880',
-				colorName: 'Brown',
-			},
-			{
-				colorHash: '#f3c6c6',
-				colorName: 'Pink',
-			},
-		],
+		colors: [],
 		images: [
 			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack.jpg',
 			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-2.jpg',
@@ -605,7 +604,7 @@ export const Products: Product[] = [
 		],
 		relatedProducts: [
 			{
-				id: 4,
+				id: '4',
 				name: 'Herschel Little America Backpack',
         slug: 'herschel-little-america-backpack',
 				price: 120,
