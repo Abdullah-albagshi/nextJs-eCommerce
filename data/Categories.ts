@@ -43,7 +43,7 @@ export const CategoryItems: CategoryCarousel[] = [
       'https://savoy.nordicmade.com/wp-content/uploads/2015/08/slider-pendant-lighting.jpg',
     mobileImage:
       'https://savoy.nordicmade.com/wp-content/uploads/2015/08/slider-pendant-lighting-alt.jpg',
-    textColor: 'md:text-white',
+    textColor: 'light',
   },
   {
     key: 'clock',
@@ -54,7 +54,7 @@ export const CategoryItems: CategoryCarousel[] = [
       'https://savoy.nordicmade.com/wp-content/uploads/2015/08/slider-wall-clock.jpg',
     mobileImage:
       'https://savoy.nordicmade.com/wp-content/uploads/2015/08/slider-wall-clock-alt.jpg',
-    textColor: 'text-black',
+    textColor: 'dark',
   },
   {
     key: 'basket',
@@ -65,6 +65,6 @@ export const CategoryItems: CategoryCarousel[] = [
       'https://savoy.nordicmade.com/wp-content/uploads/2015/08/slider-basket.jpg',
     mobileImage:
       'https://savoy.nordicmade.com/wp-content/uploads/2015/08/slider-basket-alt.jpg',
-    textColor: 'text-black',
+    textColor: 'dark',
   },
 ];
