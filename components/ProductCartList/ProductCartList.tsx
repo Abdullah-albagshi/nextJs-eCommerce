@@ -1,7 +1,7 @@
 'use client';
 import React from 'react'
 import { useCart } from '../CartProvider/CartProvider';
-import ProductCartItem from '../ProductCartItem/ProductCartItem';
+import ProductCartItem from './ProductCartItem/ProductCartItem';
 
 export const ProductCartList = () => {
   const { products } = useCart();

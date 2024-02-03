@@ -1,4 +1,4 @@
-import { CartProduct, useCart } from '../CartProvider/CartProvider';
+import { CartProduct, useCart } from '../../CartProvider/CartProvider';
 import { Play, X } from 'lucide-react';
 
 import React from 'react';

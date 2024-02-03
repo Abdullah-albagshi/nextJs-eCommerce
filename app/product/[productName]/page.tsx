@@ -43,6 +43,14 @@ export default async function Page({ params }: { params: Params }) {
         </div>
       </div>
       </section>
+      {/* tabs -> description additional information and reviews */}
+      <section>
+        
+      </section>
+      {/* sku, category, tags */}
+      <section></section>
+      {/* related products */}
+      <section></section>
     </section>
   );
 }
