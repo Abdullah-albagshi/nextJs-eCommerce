@@ -3,10 +3,10 @@
 import ErrorPage from '@/components/ErrorPage/ErrorPage'
 import React from 'react'
 
-const error = () => {
+const Error = () => {
   return (
     <ErrorPage/>
   )
 }
 
-export default error
+export default Error

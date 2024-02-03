@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { ProductCartList } from '../ProductCartList/ProductCartList';
 import React from 'react';
 import { ScrollArea } from '../ui/scroll-area';
-import { X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useCart } from '../CartProvider/CartProvider';
 
