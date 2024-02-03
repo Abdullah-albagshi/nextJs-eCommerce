@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 const Categories = () => {
 	const pathname = usePathname();
 	return (
-		<div className='flex flex-col-reverse md:flex-row flex-wrap md:items-center'>
+		<div className='flex flex-col-reverse md:flex-row flex-wrap md:items-center px-3'>
 			{data.map((category, idx) => (
 				<div key={category.key} className='border-b pb-2 md:pb-0 md:border-none'>
 					<Link
