@@ -27,7 +27,7 @@ export default function Page() {
       {/* shopping cart */}
       <section className='w-full md:w-2/3'>
         <h1 className='mb-8 text-2xl text-ecm-black'>Shopping Cart</h1>
-        <div>
+        <div className='cart-list'>
           <ProductCartList />
         </div>
       </section>

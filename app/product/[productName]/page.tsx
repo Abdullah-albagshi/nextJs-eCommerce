@@ -6,6 +6,7 @@ import { ProductSummaryDescription } from '@/components/ProductSummary/ProductSu
 import { ProductSummaryName } from '@/components/ProductSummary/ProductSummaryName';
 import { ProductSummaryPrice } from '@/components/ProductSummary/ProductSummaryPrice';
 import { ProductSummaryRating } from '@/components/ProductSummary/ProductSummaryRating';
+import ProductTabs from '@/components/ProductTabs/ProductTabs';
 import SocialMedia from '@/components/SocialMedia/SocialMedia';
 import { getProduct } from '@/services/Products';
 
@@ -44,8 +45,8 @@ export default async function Page({ params }: { params: Params }) {
       </div>
       </section>
       {/* tabs -> description additional information and reviews */}
-      <section>
-        
+      <section className='flex-1 mx-auto ecm-max-width md:!px-8 text-center pt-4'>
+        <ProductTabs product={product} />
       </section>
       {/* sku, category, tags */}
       <section></section>

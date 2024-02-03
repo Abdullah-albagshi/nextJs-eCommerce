@@ -8,6 +8,15 @@ export type AdditionalInfo = {
   size: string
 }
 
+export type UserReviews = {
+  id: number
+  name: string
+  avatar: string
+  date: string
+  rating: number
+  content: string
+}[] | null
+
 export type Product = {
   id: string
   name: string
@@ -26,14 +35,7 @@ export type Product = {
   additionalInfo: AdditionalInfo
   serialNumber: string
   rating: number | null
-  reviews: {
-    id: number
-    name: string
-    avatar: string
-    date: string
-    rating: number
-    content: string
-  }[] | null
+  reviews: UserReviews
   relatedProducts: Product[] | null
   tags: string[] | null
 }
