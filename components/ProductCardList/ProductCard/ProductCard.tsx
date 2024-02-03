@@ -8,7 +8,7 @@ import { ProductCardInfo } from './ProductCardInfo';
 import { ProductCardItem } from './ProductCardItem';
 import { ProductCardPrice } from './ProductCardPrice';
 import { ProductCardProvider } from './ProductCardContext';
-import { ProductModal } from '../ProductModal/ProductModal';
+import { ProductModal } from '../../ProductModal/ProductModal';
 import React from 'react';
 
 type Props = {

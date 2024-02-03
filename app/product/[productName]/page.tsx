@@ -1,7 +1,7 @@
 import { AddProductToCart } from '@/components/ProductSummary/AddProductToCart';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import Link from 'next/link';
-import ProductCard from '@/components/ProductCard/ProductCard';
+import ProductCard from '@/components/ProductCardList/ProductCard/ProductCard';
 import ProductCarousel from '@/components/ProductCarousel/ProductCarousel';
 import ProductSummary from '@/components/ProductSummary/ProductSummary';
 import { ProductSummaryDescription } from '@/components/ProductSummary/ProductSummaryDescription';
@@ -11,6 +11,7 @@ import { ProductSummaryRating } from '@/components/ProductSummary/ProductSummary
 import ProductTabs from '@/components/ProductTabs/ProductTabs';
 import SocialMedia from '@/components/SocialMedia/SocialMedia';
 import { getProduct } from '@/services/Products';
+import { ProductCardList } from '@/components/ProductCardList/ProductCardList';
 
 type Params = {
   productName: string;
@@ -82,11 +83,7 @@ export default async function Page({ params }: { params: Params }) {
       {/* related products */}
       <section className='flex-1 mx-auto ecm-max-width md:!px-8 text-center pt-4'>
         <h1 className='px-3 my-8 text-2xl text-start text-ecm-black'>Related Products</h1>
-        <ul className='flex flex-wrap'>
-          {product.relatedProducts && product.relatedProducts.map((product) => (
-            <ProductCard product={product} className='w-1/2 md:w-1/3 lg:w-1/4' key={`product-${product.id}`} />
-          ))}
-        </ul>
+        <ProductCardList products={product.relatedProducts} />
       </section>
     </section>
   );

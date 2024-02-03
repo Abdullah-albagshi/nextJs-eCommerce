@@ -18,7 +18,7 @@ import { ProductSummaryRating } from "../ProductSummary/ProductSummaryRating"
 import React from "react"
 import SocialMedia from "../SocialMedia/SocialMedia"
 import { X } from "lucide-react"
-import { useProductCard } from "../ProductCard/ProductCardContext"
+import { useProductCard } from "../ProductCardList/ProductCard/ProductCardContext"
 
 type Props = {
   product: Product
