@@ -15,10 +15,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='en'>
+		<html lang='en' className='!scroll-smooth'>
 			<body className='flex min-h-dvh flex-col font-sans'>
 				<Navbar />
-				{children}
+          {children}
 				<Footer />
 			</body>
 		</html>
