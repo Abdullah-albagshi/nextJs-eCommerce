@@ -25,7 +25,7 @@ const ProductUserReviews = ({ reviews }: Props) => {
 			<div className='flex flex-col gap-4 my-4 text-start'>
 				{reviews.map((review, index) => (
 					<div key={index} className='flex flex-row gap-4'>
-            <User size={50} strokeWidth={1} />
+            <User size={50} strokeWidth={1} className='hidden md:block' />
 						<div className='flex-1'>
 							<div className=''>
 								<div className='flex justify-between'>
