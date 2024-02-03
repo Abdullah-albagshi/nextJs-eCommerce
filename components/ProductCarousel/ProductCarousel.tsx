@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/carousel';
 
 import CarouselItemImage from './CarouselItemImage';
+import { ImageZoom } from '../ImageZoom/ImageZoom';
 import { Product } from '@/types/Product';
 import React from 'react';
 
@@ -15,31 +16,37 @@ type CarouselProps = {
   product: Product;
   // for carousel dots or carousel thumbs
   children?: React.ReactNode;
+  // image with zoom
+  imageWithZoom?: boolean;
   className?: string;
 };
 
 
-const ProductCarousel = ({ product, children,className }: CarouselProps) => {
+const ProductCarousel = ({ product, children, className, imageWithZoom }: CarouselProps) => {
+  // wither to use image zoom or not based on the prop
+  const ImgContainer = imageWithZoom ? ImageZoom : 'div';
 
   return (
-      <CarouselComponent className={className}>
-        {children}
-        <CarouselContent>
-          {
-            product.images.map((image, index) => (
-              <CarouselItemImage key={index}>
+    <CarouselComponent className={className}>
+      {children}
+      <CarouselContent>
+        {
+          product.images.map((image, index) => (
+            <CarouselItemImage key={index}>
+              <ImgContainer>
                 <img
                   className='w-full h-auto'
                   src={image}
                   alt={product.name}
                 />
-              </CarouselItemImage>
-            ))
-          }
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </CarouselComponent>
+              </ImgContainer>
+            </CarouselItemImage>
+          ))
+        }
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </CarouselComponent>
   );
 };
 

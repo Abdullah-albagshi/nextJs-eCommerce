@@ -32,6 +32,7 @@ export default async function Page({ params }: { params: Params }) {
           <div className='lg:max-w-[650px] '>
             <ProductCarousel
               product={product}
+              imageWithZoom={true}
               className='flex flex-col-reverse lg:flex-row'
             >
               <ProductCarousel.CarouselThumbs images={product.images} />
