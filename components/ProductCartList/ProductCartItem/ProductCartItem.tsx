@@ -1,9 +1,9 @@
 import { CartProduct, useCart } from '../../CartProvider/CartProvider';
 import { Play, X } from 'lucide-react';
 
+import Link from 'next/link';
 import React from 'react';
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 type Props = {
@@ -30,7 +30,7 @@ const ProductCartItem = ({ product }: Props) => {
 			</button>
 			<Link href={`/product/${slug}`} passHref>
 				<img
-					className='w-full h-full'
+					className='w-[80px] h-[90px]'
 					src={firstThumbnail}
 					alt={firstThumbnail}
 				/>

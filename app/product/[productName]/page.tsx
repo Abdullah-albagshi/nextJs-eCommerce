@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: Params }) {
         <div className='lg:max-w-[650px] '>
           <ProductCarousel product={product} className='flex flex-col-reverse lg:flex-row'>
             <ProductCarousel.CarouselThumbs images={product.images} />
-            <ProductCarousel.CarouselDots className='lg:hidden z-[30] p-0 m-0 md:justify-center [&>div]:static [&>div]:p-3' />
+            <ProductCarousel.CarouselDots className='lg:hidden z-[25] p-0 m-0 md:justify-center [&>div]:static [&>div]:p-3' />
           </ProductCarousel>
         </div>
         <div className="px-4 pt-10 lg:pt-0 lg:ps-20 lg:min-w-[25rem] lg:w-[40%] flex flex-col justify-start gap-4">
