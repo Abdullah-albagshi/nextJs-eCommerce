@@ -67,8 +67,8 @@ const Navbar = () => {
                   <span>Sign in</span>
                 </Link>
               </li>
-              <li className='px-3 p y-4' hidden={pathname === '/cart'}>
-                <button onClick={() => setIsCartModalOpen(true)} >
+              <li className='px-3 p y-4' >
+                <button onClick={() => pathname !== '/cart' && setIsCartModalOpen(true)} >
                   <span className='hidden md:inline-block'>Cart</span>
                   <span className='hidden md:inline-block text-ecm-yellow text-xs ml-1 relative top-[-0.625rem]'>{totalItems}</span>
                   <span className='md:hidden text-ecm-black hover:text-ecm-gray-light'>{`(${totalItems})`}</span>

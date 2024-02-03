@@ -13,6 +13,7 @@ import React from 'react';
 
 type CarouselProps = {
   product: Product;
+  // for carousel dots or carousel thumbs
   children?: React.ReactNode;
   className?: string;
 };

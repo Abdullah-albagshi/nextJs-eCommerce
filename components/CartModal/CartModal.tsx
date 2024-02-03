@@ -2,13 +2,14 @@
 
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 
-import { Button } from '@/components/ui/button';
-import ProductCartItem from '../ProductCartItem/ProductCartItem';
 import React from 'react';
 import { ScrollArea } from '../ui/scroll-area';
 import { X } from 'lucide-react';
 import { useCart } from '../CartProvider/CartProvider';
 import { cn } from '@/lib/utils';
+import { ProductCartList } from '../ProductCartList/ProductCartList';
+import { EmptyCart } from '../EmptyCart/EmptyCart';
+import Link from 'next/link';
 
 type CartModalProps = {
 	isOpen: boolean;
@@ -16,24 +17,11 @@ type CartModalProps = {
 };
 
 const CartModal = ({ isOpen, setOpen }: CartModalProps) => {
-	const { products, subtotal } = useCart();
+	const { products, subtotal, setIsCartModalOpen } = useCart();
 	const handleClose = () => {
 		setOpen(false);
 	};
-	const NoProducts = () => {
-		return (
-			<div className='flex-1 flex flex-col items-center justify-center w-full h-full'>
-				<X
-					size={32}
-					strokeWidth={2}
-					className='p-2 bg-ecm-gray rounded-full animate-pulse'
-				/>
-				<p className='text-ecm-gray-lightest text-lg'>
-					No products in the cart.
-				</p>
-			</div>
-		);
-	};
+
 	return (
 		<Sheet open={isOpen} onOpenChange={handleClose}>
 			<SheetContent className='flex flex-col border-none bg-ecm-light-black py-8 px-10 w-full md:min-w-[26rem]'>
@@ -45,11 +33,9 @@ const CartModal = ({ isOpen, setOpen }: CartModalProps) => {
 						Close
 					</button>
 				</div>
-				{products.length === 0 && <NoProducts />}
+				{products.length === 0 && <EmptyCart />}
 				<ScrollArea className='flex-1'>
-					{products.map((product) => (
-						<ProductCartItem key={product.id} product={product} />
-					))}
+					<ProductCartList/>
 				</ScrollArea>
 				<div className=''>
 					<button
@@ -76,7 +62,7 @@ const CartModal = ({ isOpen, setOpen }: CartModalProps) => {
 							${subtotal.toFixed(2)}
 						</span>
 					</div>
-					<a href='/cart' className='w-full'>
+					<Link href='/cart' className='w-full' onClick={()=>{setIsCartModalOpen(false)}}>
 						<button
 							className={cn(
 								'w-full bg-transparent text-ecm-gray-lightest text-base py-2 ',
@@ -85,12 +71,12 @@ const CartModal = ({ isOpen, setOpen }: CartModalProps) => {
 						>
 							View Cart
 						</button>
-					</a>
-					<a href='/cart' className='w-full'>
+					</Link>
+					<Link href='/cart' className='w-full' onClick={()=>{setIsCartModalOpen(false)}}>
 						<button className='w-full p-4 text-white transition-colors duration-300 bg-[#111] hover:bg-[#111]/50 disabled:cursor-not-allowed disabled:hover:bg-ecm-black'>
 							Proceed to Checkout
 						</button>
-					</a>
+					</Link>
 				</div>
 			</SheetContent>
 		</Sheet>

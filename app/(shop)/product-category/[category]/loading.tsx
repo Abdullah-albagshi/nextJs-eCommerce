@@ -3,7 +3,9 @@ import React from 'react'
 
 const Loading = () => {
   return (
-    <ProductsSkeleton/>
+    <div className="mt-4">
+      <ProductsSkeleton/>
+    </div>
   )
 }
 
