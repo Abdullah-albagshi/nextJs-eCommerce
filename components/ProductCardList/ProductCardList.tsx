@@ -7,8 +7,8 @@ type Props = {
 }
 
 export const ProductCardList = ({ products }: Props) => {
-  if (!products) {
-    return null
+  if (!products?.length) {
+    return <p className='px-3 text-ecm-black'>No products were found matching your selection.</p>
   }
   return (
     <ul className='flex flex-wrap'>

@@ -1,5 +1,5 @@
 import Carousel from "@/components/CategoryCarousel/Carousel";
-import Categories from "@/components/Filters/Categories";
+import Filters from "@/components/Filters/Filters";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,12 +13,10 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className='flex-1 basis-full w-full center mx-auto pb-10'>
+    <main className='flex-1 w-full pb-10 mx-auto basis-full center'>
       <Carousel />
-      <section className="flex-1 basis-full ecm-max-width center mx-auto">
-        <div className="py-14">
-          <Categories />
-        </div>
+      <section className="flex-1 mx-auto basis-full ecm-max-width center">
+        <Filters/>
         {children}
       </section>
     </main>
