@@ -13,9 +13,9 @@ const ProductUserReviews = ({ reviews }: Props) => {
 	const EmptyReviews = () => {
 		if (!reviews || reviews.length === 0)
 			return (
-				<div className='text-center'>
-					<p>There are no reviews yet.</p>
-					<h1>Be the first to review “Striped Canvas Bag”</h1>
+				<div className='text-start'>
+					<p className='text-ecm-gray'>There are no reviews yet.</p>
+					<h1 className='mt-2 text-2xl'>Be the first to reviewer</h1>
 				</div>
 			);
 	};
