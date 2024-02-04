@@ -1,40 +1,80 @@
 import { Product } from '@/types/Product';
 
-export const Products: Product[] = [
+const description =
+	'Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.';
+const additionalInfo = {
+	weight: '0.5 kg',
+	dimensions: '25 × 25 × 25 cm',
+	material: 'Cotton',
+	other: 'Vegan',
+	size: 'Small',
+};
+
+// This is a mock of the data don't mind the accuracy of the data
+
+const relatedProducts: Product[] = [
 	{
-		id: '1',
-		name: 'Herschel Little America Backpack',
-    slug: 'herschel-little-america',
-		price: 120,
-		discount: 10,
+		id: '4145',
+		name: 'Striped Canvas',
+		slug: 'striped-canvas',
+		price: 230,
+		discount: 30,
 		colors: [
 			{
-				colorHash: '#cfa880',
-				colorName: 'Brown',
+				colorHash: '#1e73be',
+				colorName: 'Blue',
 			},
 			{
-				colorHash: '#f3c6c6',
-				colorName: 'Pink',
+				colorHash: '#dc9814',
+				colorName: 'Orange',
 			},
 		],
 		images: [
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack.jpg',
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-2.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-striped-canvas-bag.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-striped-canvas-bag-2.jpg',
 		],
 		thumbnails: [
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-300x372.jpg',
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-2-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-striped-canvas-bag-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-striped-canvas-bag-2-450x558.jpg',
 		],
-		quantity: 3,
-		description: `Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern personalized look.`,
+		quantity: 5,
+		description: description,
 		category: 'bags',
-		additionalInfo: {
-			weight: '0.5 kg',
-			dimensions: '25 × 25 × 25 cm',
-			material: 'Cotton',
-			other: 'Vegan',
-			size: 'Small',
-		},
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [],
+		relatedProducts: [],
+		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
+	},
+	{
+		id: '32156',
+		name: 'Colourful Coasters',
+		slug: 'Colourful-Coasters',
+		price: 20,
+		discount: 0,
+		colors: [
+			{
+				colorHash: '#05ac92',
+				colorName: 'Green',
+			},
+			{
+				colorHash: '#dc9814',
+				colorName: 'Orange',
+			},
+		],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-colourful-coasters.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-colourful-coasters-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-colourful-coasters-300x372.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-colourful-coasters-2-300x372.jpg',
+		],
+		quantity: 23,
+		description: description,
+		category: 'decoration',
+		additionalInfo: additionalInfo,
 		serialNumber: 'N/A',
 		rating: 4.5,
 		reviews: [
@@ -47,124 +87,29 @@ export const Products: Product[] = [
 				content: 'test',
 				rating: 5,
 			},
-			{
-				id: 2,
-				name: 'Jane Doe',
-				avatar:
-					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
-				date: 'August 23, 2020',
-				content: 'test',
-				rating: 4,
-			},
 		],
-		relatedProducts: [
-			{
-				id: '2',
-				name: 'Herschel Little America Backpack',
-        slug: 'herschel-little-america-backpack',
-				price: 120,
-				discount: 0,
-				colors: [
-					{
-						colorHash: '#e3e3e3',
-						colorName: 'Gray',
-					},
-					{
-						colorHash: '#000000',
-						colorName: 'Black',
-					},
-					{
-						colorHash: '#cfa880',
-						colorName: 'Brown',
-					},
-					{
-						colorHash: '#f3c6c6',
-						colorName: 'Pink',
-					},
-				],
-				images: [
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-2.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-3.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-4.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-5.jpg',
-				],
-				thumbnails: [
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-2-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-3-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-4-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-5-100x100.jpg',
-				],
-				quantity: 1,
-				description: `
-          <p>
-            The Herschel Little America™ backpack is an iconic silhouette, pairing classic mountaineering style with modern functionality.
-          </p>
-          <ul>
-            <li>Signature striped fabric liner</li>
-            <li>Padded and fleece lined 15″ laptop sleeve</li>
-            <li>Adjustable drawcord closure</li>
-            <li>Magnetic strap closures with metal pin clips</li>
-            <li>Front pocket with hidden zipper and key clip</li>
-          </ul>
-        `,
-				category: 'bags',
-				additionalInfo: {
-					weight: '0.5 kg',
-					dimensions: '25 × 25 × 25 cm',
-					material: 'Cotton',
-					other: 'Vegan',
-					size: 'Small',
-				},
-				serialNumber: 'N/A',
-				rating: 4.5,
-				reviews: [],
-				relatedProducts: [],
-				tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
-			},
-		],
-		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
+		relatedProducts: [],
+		tags: ['decoration'],
 	},
-  {
-		id: '2',
-		name: 'Herschel Little America Backpack',
-    slug: 'herschel-little-america-backpack',
-		price: 120,
+	{
+		id: 'asd6854184',
+		name: 'Embrodiered Slippers',
+		slug: 'Embrodiered-Slippers',
+		price: 180,
 		discount: 0,
 		colors: [],
 		images: [
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack.jpg',
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-2.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-embrodiered-slippers.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-embrodiered-slippers-2.jpg',
 		],
 		thumbnails: [
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-300x372.jpg',
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-2-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-embrodiered-slippers-300x372.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-embrodiered-slippers-2-300x372.jpg',
 		],
-		quantity: 1,
-		description: `
-      <p>
-        The Herschel Little America™ backpack is an iconic silhouette, pairing classic mountaineering style with modern functionality.
-      </p>
-      <ul>
-        <li>Signature striped fabric liner</li>
-        <li>Padded and fleece lined 15″ laptop sleeve</li>
-        <li>Adjustable drawcord closure</li>
-        <li>Magnetic strap closures with metal pin clips</li>
-        <li>Front pocket with hidden zipper and key clip</li>
-        <li>Internal media pocket with headphone port</li>
-        <li>Contoured shoulder straps and air mesh back padding</li>
-        <li>Classic woven label</li>
-      </ul>
-    `,
+		quantity: 156,
+		description: description,
 		category: 'essentials',
-		additionalInfo: {
-			weight: '0.5 kg',
-			dimensions: '25 × 25 × 25 cm',
-			material: 'Cotton',
-			other: 'Vegan',
-			size: 'Small',
-		},
+		additionalInfo: additionalInfo,
 		serialNumber: 'N/A',
 		rating: 4,
 		reviews: [
@@ -177,376 +122,44 @@ export const Products: Product[] = [
 				content: 'test',
 				rating: 5,
 			},
-			{
-				id: 2,
-				name: 'Jane Doe',
-				avatar:
-					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
-				date: 'August 23, 2020',
-				content: 'test',
-				rating: 4,
-			},
 		],
-		relatedProducts: [
-			{
-				id: '2',
-				name: 'Herschel Little America Backpack',
-        slug: 'herschel-little-america-backpack',
-				price: 120,
-				discount: 0,
-				colors: [
-					{
-						colorHash: '#e3e3e3',
-						colorName: 'Gray',
-					},
-					{
-						colorHash: '#000000',
-						colorName: 'Black',
-					},
-					{
-						colorHash: '#cfa880',
-						colorName: 'Brown',
-					},
-					{
-						colorHash: '#f3c6c6',
-						colorName: 'Pink',
-					},
-				],
-				images: [
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-2.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-3.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-4.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-5.jpg',
-				],
-				thumbnails: [
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-2-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-3-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-4-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-5-100x100.jpg',
-				],
-				quantity: 1,
-				description: `
-          <p>
-            The Herschel Little America™ backpack is an iconic silhouette, pairing classic mountaineering style with modern functionality.
-          </p>
-          <ul>
-            <li>Signature striped fabric liner</li>
-            <li>Padded and fleece lined 15″ laptop sleeve</li>
-            <li>Adjustable drawcord closure</li>
-            <li>Magnetic strap closures with metal pin clips</li>
-            <li>Front pocket with hidden zipper and key clip</li>
-          </ul>
-        `,
-				category: 'bags',
-				additionalInfo: {
-					weight: '0.5 kg',
-					dimensions: '25 × 25 × 25 cm',
-					material: 'Cotton',
-					other: 'Vegan',
-					size: 'Small',
-				},
-				serialNumber: 'N/A',
-				rating: 4.5,
-				reviews: [],
-				relatedProducts: [],
-				tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
-			},
-		],
-		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
+		relatedProducts: [],
+		tags: ['Contemporary', 'Essentials'],
 	},
-  {
-		id: '3',
-		name: 'Herschel Little America Backpack',
-    slug: 'herschel-little',
-		price: 120,
+	{
+		id: 'multicolorHangers321asd561asd484',
+		name: 'Multicolor Hangers',
+		slug: 'multicolor-hangers',
+		price: 10,
 		discount: 0,
-		colors: [
-			{
-				colorHash: '#cfa880',
-				colorName: 'Brown',
-			},
-			{
-				colorHash: '#f3c6c6',
-				colorName: 'Pink',
-			},
-		],
+		colors: [],
 		images: [
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack.jpg',
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-2.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-multicolor-hangers.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-multicolor-hangers-2.jpg',
 		],
 		thumbnails: [
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-300x372.jpg',
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-2-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-multicolor-hangers-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-multicolor-hangers-2-450x558.jpg',
 		],
-		quantity: 1,
-		description: `
-      <p>
-        The Herschel Little America™ backpack is an iconic silhouette, pairing classic mountaineering style with modern functionality.
-      </p>
-      <ul>
-        <li>Signature striped fabric liner</li>
-        <li>Padded and fleece lined 15″ laptop sleeve</li>
-        <li>Adjustable drawcord closure</li>
-        <li>Magnetic strap closures with metal pin clips</li>
-        <li>Front pocket with hidden zipper and key clip</li>
-        <li>Internal media pocket with headphone port</li>
-        <li>Contoured shoulder straps and air mesh back padding</li>
-        <li>Classic woven label</li>
-      </ul>
-    `,
-		category: 'essentials',
-		additionalInfo: {
-			weight: '0.5 kg',
-			dimensions: '25 × 25 × 25 cm',
-			material: 'Cotton',
-			other: 'Vegan',
-			size: 'Small',
-		},
+		quantity: 20,
+		description: description,
+		category: 'interior',
+		additionalInfo: additionalInfo,
 		serialNumber: 'N/A',
 		rating: 4.5,
-		reviews: [
-			{
-				id: 1,
-				name: 'John Doe',
-				avatar:
-					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
-				date: 'August 23, 2020',
-				content: 'test',
-				rating: 5,
-			},
-			{
-				id: 2,
-				name: 'Jane Doe',
-				avatar:
-					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
-				date: 'August 23, 2020',
-				content: 'test',
-				rating: 4,
-			},
-		],
-		relatedProducts: [
-			{
-				id: '2',
-				name: 'Herschel Little America Backpack',
-        slug: 'herschel-little-america-backpack',
-				price: 120,
-				discount: 0,
-				colors: [
-					{
-						colorHash: '#e3e3e3',
-						colorName: 'Gray',
-					},
-					{
-						colorHash: '#000000',
-						colorName: 'Black',
-					},
-					{
-						colorHash: '#cfa880',
-						colorName: 'Brown',
-					},
-					{
-						colorHash: '#f3c6c6',
-						colorName: 'Pink',
-					},
-				],
-				images: [
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-2.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-3.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-4.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-5.jpg',
-				],
-				thumbnails: [
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-2-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-3-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-4-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-5-100x100.jpg',
-				],
-				quantity: 1,
-				description: `
-          <p>
-            The Herschel Little America™ backpack is an iconic silhouette, pairing classic mountaineering style with modern functionality.
-          </p>
-          <ul>
-            <li>Signature striped fabric liner</li>
-            <li>Padded and fleece lined 15″ laptop sleeve</li>
-            <li>Adjustable drawcord closure</li>
-            <li>Magnetic strap closures with metal pin clips</li>
-            <li>Front pocket with hidden zipper and key clip</li>
-          </ul>
-        `,
-				category: 'bags',
-				additionalInfo: {
-					weight: '0.5 kg',
-					dimensions: '25 × 25 × 25 cm',
-					material: 'Cotton',
-					other: 'Vegan',
-					size: 'Small',
-				},
-				serialNumber: 'N/A',
-				rating: 4.5,
-				reviews: [],
-				relatedProducts: [],
-				tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
-			},
-		],
-		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
+		reviews: [],
+		relatedProducts: [],
+		tags: ['Contemporary', 'Interior'],
 	},
-  {
-		id: '4',
-		name: 'Herschel Little America Backpack',
-    slug: 'herschel',
+];
+
+const bags: Product[] = [
+	{
+		id: '1',
+		name: 'Hans Backpack',
+		slug: 'hans-backpack',
 		price: 120,
-		discount: 0,
-		colors: [
-			{
-				colorHash: '#cfa880',
-				colorName: 'Brown',
-			},
-			{
-				colorHash: '#f3c6c6',
-				colorName: 'Pink',
-			},
-      {
-        colorHash: '#e3e3e3',
-        colorName: 'Gray',
-      },
-      {
-        colorHash: '#000000',
-        colorName: 'Black',
-      },
-		],
-		images: [
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack.jpg',
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-2.jpg',
-		],
-		thumbnails: [
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-300x372.jpg',
-			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-2-450x558.jpg',
-		],
-		quantity: 1,
-		description: `
-      <p>
-        The Herschel Little America™ backpack is an iconic silhouette, pairing classic mountaineering style with modern functionality.
-      </p>
-      <ul>
-        <li>Signature striped fabric liner</li>
-        <li>Padded and fleece lined 15″ laptop sleeve</li>
-        <li>Adjustable drawcord closure</li>
-        <li>Magnetic strap closures with metal pin clips</li>
-        <li>Front pocket with hidden zipper and key clip</li>
-        <li>Internal media pocket with headphone port</li>
-        <li>Contoured shoulder straps and air mesh back padding</li>
-        <li>Classic woven label</li>
-      </ul>
-    `,
-		category: 'essentials',
-		additionalInfo: {
-			weight: '0.5 kg',
-			dimensions: '25 × 25 × 25 cm',
-			material: 'Cotton',
-			other: 'Vegan',
-			size: 'Small',
-		},
-		serialNumber: 'N/A',
-		rating: 4.5,
-		reviews: [
-			{
-				id: 1,
-				name: 'John Doe',
-				avatar:
-					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
-				date: 'August 23, 2020',
-				content: 'test',
-				rating: 5,
-			},
-			{
-				id: 2,
-				name: 'Jane Doe',
-				avatar:
-					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
-				date: 'August 23, 2020',
-				content: 'test',
-				rating: 4,
-			},
-		],
-		relatedProducts: [
-			{
-				id: '4',
-				name: 'Herschel Little America Backpack',
-        slug: 'herschel-little-america-backpack',
-				price: 120,
-				discount: 0,
-				colors: [
-					{
-						colorHash: '#e3e3e3',
-						colorName: 'Gray',
-					},
-					{
-						colorHash: '#000000',
-						colorName: 'Black',
-					},
-					{
-						colorHash: '#cfa880',
-						colorName: 'Brown',
-					},
-					{
-						colorHash: '#f3c6c6',
-						colorName: 'Pink',
-					},
-				],
-				images: [
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-2.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-3.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-4.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-5.jpg',
-				],
-				thumbnails: [
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-2-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-3-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-4-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-5-100x100.jpg',
-				],
-				quantity: 1,
-				description: `
-          <p>
-            The Herschel Little America™ backpack is an iconic silhouette, pairing classic mountaineering style with modern functionality.
-          </p>
-          <ul>
-            <li>Signature striped fabric liner</li>
-            <li>Padded and fleece lined 15″ laptop sleeve</li>
-            <li>Adjustable drawcord closure</li>
-            <li>Magnetic strap closures with metal pin clips</li>
-            <li>Front pocket with hidden zipper and key clip</li>
-          </ul>
-        `,
-				category: 'bags',
-				additionalInfo: {
-					weight: '0.5 kg',
-					dimensions: '25 × 25 × 25 cm',
-					material: 'Cotton',
-					other: 'Vegan',
-					size: 'Small',
-				},
-				serialNumber: 'N/A',
-				rating: 4.5,
-				reviews: [],
-				relatedProducts: [],
-				tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
-			},
-		],
-		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
-	},{
-		id: '5',
-		name: 'Herschel Little America Backpack',
-    slug: 'backpack',
-		price: 120,
-		discount: 0,
+		discount: 10,
 		colors: [],
 		images: [
 			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack.jpg',
@@ -556,22 +169,336 @@ export const Products: Product[] = [
 			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-300x372.jpg',
 			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-hans-backpack-2-450x558.jpg',
 		],
-		quantity: 1,
-		description: `
-      <p>
-        The Herschel Little America™ backpack is an iconic silhouette, pairing classic mountaineering style with modern functionality.
-      </p>
-      <ul>
-        <li>Signature striped fabric liner</li>
-        <li>Padded and fleece lined 15″ laptop sleeve</li>
-        <li>Adjustable drawcord closure</li>
-        <li>Magnetic strap closures with metal pin clips</li>
-        <li>Front pocket with hidden zipper and key clip</li>
-        <li>Internal media pocket with headphone port</li>
-        <li>Contoured shoulder straps and air mesh back padding</li>
-        <li>Classic woven label</li>
-      </ul>
-    `,
+		quantity: 3,
+		description: description,
+		category: 'bags',
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 3,
+		reviews: [
+			{
+				id: 1,
+				name: 'John Doe',
+				avatar:
+					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
+				date: 'August 23, 2020',
+				content: 'test',
+				rating: 5,
+			},
+			{
+				id: 2,
+				name: 'Jane Doe',
+				avatar:
+					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
+				date: 'August 23, 2020',
+				content: 'test',
+				rating: 4,
+			},
+		],
+		relatedProducts: relatedProducts,
+		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
+	},
+	{
+		id: '4',
+		name: 'Multi Device Bag',
+		slug: 'multi-device-bag',
+		price: 120,
+		discount: 0,
+		colors: [],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-multi-device-bag.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-multi-device-bag-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-multi-device-bag-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-multi-device-bag-2-450x558.jpg',
+		],
+		quantity: 2,
+		description: description,
+		category: 'bags',
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [],
+		relatedProducts: relatedProducts,
+		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
+	},
+	{
+		id: '44',
+		name: 'Laptop Bag',
+		slug: 'laptop-bag',
+		price: 120,
+		discount: 0,
+		colors: [],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-laptop-bag.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-laptop-bag-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-laptop-bag-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-laptop-bag-2-450x558.jpg',
+		],
+		quantity: 3,
+		description: description,
+		category: 'bags',
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [],
+		relatedProducts: relatedProducts,
+		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
+	},
+	{
+		id: '4145',
+		name: 'Striped Canvas',
+		slug: 'striped-canvas',
+		price: 230,
+		discount: 30,
+		colors: [
+			{
+				colorHash: '#1e73be',
+				colorName: 'Blue',
+			},
+			{
+				colorHash: '#dc9814',
+				colorName: 'Orange',
+			},
+		],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-striped-canvas-bag.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-striped-canvas-bag-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-striped-canvas-bag-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-striped-canvas-bag-2-450x558.jpg',
+		],
+		quantity: 5,
+		description: description,
+		category: 'bags',
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [],
+		relatedProducts: relatedProducts,
+		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
+	},
+];
+
+const decoration: Product[] = [
+	{
+		id: '32156',
+		name: 'Colourful Coasters',
+		slug: 'Colourful-Coasters',
+		price: 20,
+		discount: 0,
+		colors: [
+			{
+				colorHash: '#05ac92',
+				colorName: 'Green',
+			},
+			{
+				colorHash: '#dc9814',
+				colorName: 'Orange',
+			},
+		],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-colourful-coasters.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-colourful-coasters-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-colourful-coasters-300x372.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-colourful-coasters-2-300x372.jpg',
+		],
+		quantity: 23,
+		description: description,
+		category: 'decoration',
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [
+			{
+				id: 1,
+				name: 'John Doe',
+				avatar:
+					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
+				date: 'August 23, 2020',
+				content: 'test',
+				rating: 5,
+			},
+		],
+		relatedProducts: relatedProducts,
+		tags: ['decoration'],
+	},
+	{
+		id: '32156asd',
+		name: 'Lighthouse Lantern',
+		slug: 'lighthouse-lantern',
+		price: 20,
+		discount: 0,
+		colors: [],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-lighthouse-lantern.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-lighthouse-lantern-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-lighthouse-lantern-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-lighthouse-lantern-2-450x558.jpg',
+		],
+		quantity: 12,
+		description: description,
+		category: 'decoration',
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [
+			{
+				id: 1,
+				name: 'John Doe',
+				avatar:
+					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
+				date: 'August 23, 2020',
+				content: 'test',
+				rating: 5,
+			},
+		],
+		relatedProducts: relatedProducts,
+		tags: ['decoration'],
+	},
+	{
+		id: '5611561589',
+		name: 'Wall Clock',
+		slug: 'wall-clock',
+		price: 20,
+		discount: 0,
+		colors: [],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-wall-clock.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-wall-clock-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-wall-clock-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-wall-clock-2-450x558.jpg',
+		],
+		quantity: 4,
+		description: description,
+		category: 'decoration',
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [
+			{
+				id: 1,
+				name: 'John Doe',
+				avatar:
+					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
+				date: 'August 23, 2020',
+				content: 'test',
+				rating: 5,
+			},
+		],
+		relatedProducts: relatedProducts,
+		tags: ['decoration'],
+	},
+	{
+		id: '156asd894',
+		name: 'Door Bumper',
+		slug: 'door-bumper',
+		price: 29,
+		discount: 50,
+		colors: [],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-door-bumper.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-door-stop.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-door-bumper-300x372.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-door-stop-300x372.jpg',
+		],
+		quantity: 2,
+		description: description,
+		category: 'decoration',
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [
+			{
+				id: 1,
+				name: 'John Doe',
+				avatar:
+					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
+				date: 'August 23, 2020',
+				content: 'test',
+				rating: 5,
+			},
+		],
+		relatedProducts: relatedProducts,
+		tags: ['decoration'],
+	},
+];
+
+const essentials: Product[] = [
+	{
+		id: 'asd6854184',
+		name: 'Embrodiered Slippers',
+		slug: 'Embrodiered-Slippers',
+		price: 180,
+		discount: 0,
+		colors: [],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-embrodiered-slippers.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-embrodiered-slippers-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-embrodiered-slippers-300x372.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-embrodiered-slippers-2-300x372.jpg',
+		],
+		quantity: 156,
+		description: description,
+		category: 'essentials',
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 4,
+		reviews: [
+			{
+				id: 1,
+				name: 'John Doe',
+				avatar:
+					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
+				date: 'August 23, 2020',
+				content: 'test',
+				rating: 5,
+			},
+		],
+		relatedProducts: relatedProducts,
+		tags: ['Contemporary', 'Essentials'],
+	},
+	{
+		id: '56asd156asd18a9s6d',
+		name: 'Solo Headphones',
+		slug: 'solo-headphones',
+		price: 200,
+		discount: 0,
+		colors: [
+			{
+				colorHash: '#736751',
+				colorName: 'Brown',
+			},
+			{
+				colorHash: '#ffffff',
+				colorName: 'White',
+			},
+		],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-solo-headphones.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-solo-headphones-2.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-solo-headphones-3.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-solo-headphones-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-solo-headphones-2-450x558.jpg',
+		],
+		quantity: 99,
+		description: description,
 		category: 'essentials',
 		additionalInfo: {
 			weight: '0.5 kg',
@@ -602,73 +529,238 @@ export const Products: Product[] = [
 				rating: 4,
 			},
 		],
-		relatedProducts: [
+		relatedProducts: relatedProducts,
+		tags: ['Contemporary', 'Essentials'],
+	},
+	{
+		id: 'asdasda8564sd89as84f9asasf489af',
+		name: 'Specs Sunglasses',
+		slug: 'specs-sunglasses',
+		price: 200,
+		discount: 0,
+		colors: [],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-specs-sunglasses.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-specs-sunglasses-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-specs-sunglasses-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-specs-sunglasses-2-450x558.jpg',
+		],
+		quantity: 8,
+		description: description,
+		category: 'essentials',
+		additionalInfo: {
+			weight: '0.5 kg',
+			dimensions: '25 × 25 × 25 cm',
+			material: 'Cotton',
+			other: 'Vegan',
+			size: 'Small',
+		},
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [
 			{
-				id: '4',
-				name: 'Herschel Little America Backpack',
-        slug: 'herschel-little-america-backpack',
-				price: 120,
-				discount: 0,
-				colors: [
-					{
-						colorHash: '#e3e3e3',
-						colorName: 'Gray',
-					},
-					{
-						colorHash: '#000000',
-						colorName: 'Black',
-					},
-					{
-						colorHash: '#cfa880',
-						colorName: 'Brown',
-					},
-					{
-						colorHash: '#f3c6c6',
-						colorName: 'Pink',
-					},
-				],
-				images: [
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-2.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-3.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-4.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-5.jpg',
-				],
-				thumbnails: [
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-2-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-3-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-4-100x100.jpg',
-					'https://savoy.nordicmade.com/wp-content/uploads/2020/08/product-1-5-100x100.jpg',
-				],
-				quantity: 1,
-				description: `
-          <p>
-            The Herschel Little America™ backpack is an iconic silhouette, pairing classic mountaineering style with modern functionality.
-          </p>
-          <ul>
-            <li>Signature striped fabric liner</li>
-            <li>Padded and fleece lined 15″ laptop sleeve</li>
-            <li>Adjustable drawcord closure</li>
-            <li>Magnetic strap closures with metal pin clips</li>
-            <li>Front pocket with hidden zipper and key clip</li>
-          </ul>
-        `,
-				category: 'bags',
-				additionalInfo: {
-					weight: '0.5 kg',
-					dimensions: '25 × 25 × 25 cm',
-					material: 'Cotton',
-					other: 'Vegan',
-					size: 'Small',
-				},
-				serialNumber: 'N/A',
-				rating: 4.5,
-				reviews: [],
-				relatedProducts: [],
-				tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
+				id: 1,
+				name: 'John Doe',
+				avatar:
+					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
+				date: 'August 23, 2020',
+				content: 'test',
+				rating: 5,
+			},
+			{
+				id: 2,
+				name: 'Jane Doe',
+				avatar:
+					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
+				date: 'August 23, 2020',
+				content: 'test',
+				rating: 4,
 			},
 		],
-		tags: ['Bags', 'Backpacks', 'Herschel', 'Little America'],
+		relatedProducts: relatedProducts,
+		tags: ['Contemporary', 'Essentials'],
 	},
+	{
+		id: 'ad5pressdascofee',
+		name: 'Press Coffee Maker',
+		slug: 'press-coffee-maker',
+		price: 200,
+		discount: 0,
+		colors: [
+			{
+				colorHash: '#1e73be',
+				colorName: 'Blue',
+			},
+			{
+				colorHash: '#FFFFFF',
+				colorName: 'White',
+			},
+		],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-press-coffee-maker.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-press-coffee-maker-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-press-coffee-maker-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-press-coffee-maker-2-450x558.jpg',
+		],
+		quantity: 32,
+		description: description,
+		category: 'essentials',
+		additionalInfo: {
+			weight: '0.5 kg',
+			dimensions: '25 × 25 × 25 cm',
+			material: 'Cotton',
+			other: 'Vegan',
+			size: 'Small',
+		},
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [
+			{
+				id: 1,
+				name: 'John Doe',
+				avatar:
+					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
+				date: 'August 23, 2020',
+				content: 'test',
+				rating: 5,
+			},
+			{
+				id: 2,
+				name: 'Jane Doe',
+				avatar:
+					'https://secure.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=96&d=mm&r=g',
+				date: 'August 23, 2020',
+				content: 'test',
+				rating: 4,
+			},
+		],
+		relatedProducts: [],
+		tags: ['Contemporary', 'Essentials'],
+	},
+];
+const interior: Product[] = [
+	{
+		id: 'Lamp321asd561',
+		name: 'Pendant Lamp',
+		slug: 'pendant-lamp',
+		price: 2000,
+		discount: 10,
+		colors: [
+			{
+				colorHash: '#736751',
+				colorName: 'Brown',
+			},
+			{
+				colorHash: '#c0c0c0',
+				colorName: 'Gray',
+			},
+			{
+				colorHash: '#FFFFFF',
+				colorName: 'White',
+			},
+		],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-pendant-lamp.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-pendant-lamp-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-pendant-lamp-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-pendant-lamp-2-450x558.jpg',
+		],
+		quantity: 7,
+		description: description,
+		category: 'interior',
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [],
+		relatedProducts: [],
+		tags: ['Contemporary', 'Interior'],
+	},
+	{
+		id: 'basket321asd561asd484',
+		name: 'Canvas Basket',
+		slug: 'canvas-basket',
+		price: 50,
+		discount: 56,
+		colors: [],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-canvas-basket.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-canvas-basket-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-canvas-basket-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-canvas-basket-2-300x372.jpg',
+		],
+		quantity: 3,
+		description: description,
+		category: 'interior',
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [],
+		relatedProducts: [],
+		tags: ['Contemporary', 'Interior'],
+	},
+	{
+		id: 'classicChair321asd561asd484',
+		name: 'Classic Chair',
+		slug: 'classic-chair',
+		price: 150,
+		discount: 0,
+		colors: [],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-300x372.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-classic-chair-2-300x372.jpg',
+		],
+		quantity: 101,
+		description: description,
+		category: 'interior',
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [],
+		relatedProducts: [],
+		tags: ['Contemporary', 'Interior'],
+	},
+	{
+		id: 'multicolorHangers321asd561asd484',
+		name: 'Multicolor Hangers',
+		slug: 'multicolor-hangers',
+		price: 10,
+		discount: 0,
+		colors: [],
+		images: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-multicolor-hangers.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-multicolor-hangers-2.jpg',
+		],
+		thumbnails: [
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-multicolor-hangers-450x558.jpg',
+			'https://savoy.nordicmade.com/wp-content/uploads/2015/08/product-multicolor-hangers-2-450x558.jpg',
+		],
+		quantity: 20,
+		description: description,
+		category: 'interior',
+		additionalInfo: additionalInfo,
+		serialNumber: 'N/A',
+		rating: 4.5,
+		reviews: [],
+		relatedProducts: [],
+		tags: ['Contemporary', 'Interior'],
+	},
+];
+
+export const Products: Product[] = [
+	...bags,
+	...decoration,
+	...essentials,
+	...interior,
 ];
