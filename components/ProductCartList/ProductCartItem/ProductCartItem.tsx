@@ -35,11 +35,12 @@ const ProductCartItem = ({ product }: Props) => {
 					alt={firstThumbnail}
 				/>
 			</Link>
-			<div className='ps-3 w-full'>
+			<div className='w-full ps-3'>
 				<div className='flex flex-col gap-2 pe-2'>
 					<Link href={`/product/${slug}`} passHref>
 						<h3
 							className={cn(
+                'pe-5',
 								inCartPage ? 'text-ecm-black' : 'text-ecm-gray-lightest'
 							)}
 						>
@@ -48,7 +49,7 @@ const ProductCartItem = ({ product }: Props) => {
 					</Link>
 				</div>
 				<div className='flex justify-between'>
-					<div className='flex gap-2 items-center'>
+					<div className='flex items-center gap-2'>
 						<span
 							className={cn(
 								'text-base text-[#a5a5a5]',
