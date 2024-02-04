@@ -90,7 +90,11 @@ export default async function Page({ params }: { params: Params }) {
 				<h1 className='px-3 my-8 text-2xl text-start text-ecm-black'>
 					Related Products
 				</h1>
-				<ProductCardList products={product.relatedProducts} />
+				{product?.relatedProducts?.length === 0 ? (
+					<div className='text-ecm-gray'>No related products</div>
+				) : (
+					<ProductCardList products={product.relatedProducts} />
+				)}
 			</section>
 		</section>
 	);
