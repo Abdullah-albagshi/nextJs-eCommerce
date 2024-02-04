@@ -19,7 +19,7 @@ export const ProductSummaryRating = () => {
       return <StarHalf key={i} fill='#DC9814' size={18} strokeWidth={0.5} />;
     } else {
       // gray dot
-      return <span key={i} className='w-1 h-1 rounded-full bg-ecm-gray' />;
+      return <span key={i} className='w-2 h-2 rounded-full bg-ecm-gray' />;
     }
   });
   return (
